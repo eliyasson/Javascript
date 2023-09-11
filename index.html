@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="muotoilu.css">
+  <style>
+   #vari{color:RED;}
+   #vari2{color: green;}
+  </style>
+ </head>
+ <body>
+
+   <div class="header">
+     <h1>JavaScript</h1>
+   </div>
+
+   <div class="row">
+
+    <div class="col-3 col-s-3 menu">
+      <ul>
+       <a href="index.html" id="eiviiva"><li> Tehtävä  1 - 6  </li></a>
+       <a href="sivu1.html" id="eiviiva"><li> Tehtävä  7 - 12 </li></a>
+       <a href="sivu2.html" id="eiviiva"><li> Tehtävä 13 - 18 </li></a>
+       <a href="sivu3.html" id="eiviiva"><li> Tehtävä 19 - 24 </li></a>
+       <a href="sivu4.html" id="eiviiva"><li> Tehtävä 25 - 30 </li></a>
+       <a href="sivu5.html" id="eiviiva"><li> Tehtävä 31 - 36 </li></a>
+       <a href="sivu6.html" id="eiviiva"><li> Tehtävä 37 - 42 </li></a>	   
+      </ul>
+    </div>
+
+    <div class="col-9 col-s-9">
+<!------------------------------------------------------------------->	
+      <h3> Tehtävä 1 </h3>
+      <p> Lyhyesti, mitä koodaus tekee. </p>
+      <div id="koodi"><pre>
+      <b>JS</b>
+        &LTscript>
+        function omaVaihda() {
+        document.getElementById("teksti").innerHTML = 
+        "Uusi teksti.";
+        }
+       &LT/script>
+       
+      <b>HTML-koodaus</b>
+        &LTp id="teksti"> Vaihdettava teksti &LT/p>
+        &LTbutton type="button" onclick="omaVaihda()"> Klikkaa &LT/button>
+      </pre></div>
+  <div>
+    <p id="teksti">Vaihdettava teksti 1</p>
+    <button type="button" class="button" onclick="omaVaihda()">Klikkaa 1</button>
+    <p id="teksti2">Vaihdettava teksti 2</p>
+    <button type="button" class="button1" onclick="omavaihda2()">klikkaa 2</button>
+
+  </div>
+  
+  <script>
+    function omaVaihda() {
+    document.getElementById("teksti").innerHTML = 
+    "<span id='vari'> Uusi teksti. <span/>";
+    }
+    function omavaihda2() {
+    document.getElementById("teksti2").innerHTML = "<span id='vari2'> Uusi teksti 2 <span/>";
+    }
+  </script>
+  <hr>
+  <br>
+<!------------------- END ------------------------------------------->
+
+<!------------------------------------------------------------------->	
+
+
+   <div class="footer">
+     <p> Eliyas Kassaye </p>
+   </div>
+
+ </body>
+</html> 

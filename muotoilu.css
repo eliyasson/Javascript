@@ -20,7 +20,7 @@
    @media only screen and (min-width: 600px) {
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
-    .col-s-3 {width: 25%;}
+    .col-s-3 {width: 20%;}
     .col-s-4 {width: 33.33%;}
     .col-s-5 {width: 41.66%;}
     .col-s-6 {width: 50%;}
@@ -30,11 +30,11 @@
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
-}
-@media only screen and (min-width: 768px) {
+    }
+    @media only screen and (min-width: 768px) {
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
+    .col-3 {width: 15%;}
     .col-4 {width: 33.33%;}
     .col-5 {width: 41.66%;}
     .col-6 {width: 50%;}
@@ -44,7 +44,7 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-}
+    }
    html {
      font-family: "Lucida Sans", sans-serif;
    }
@@ -55,57 +55,77 @@
 	  text-align: center;
 	  border-bottom-style: 1px solid;
 	  border-bottom-color:  white;
-  }
+    }
  
-  ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: RGB(20,47,14); /*#333*/
-}
-ul.topnav li {float: left;}
-ul.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-}
-ul.topnav li a:hover:not(.active) {
-    background-color: RGB(8,121,151); 
-}
-ul.topnav li a.active {
-    background-color: RGB(85,117,0); 
-	  color: orange;
-	  font-style: italic;
-}
-ul.topnav li.right {
-    float: right;
-}
+    ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+    }
 
-ul.topnav1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #ffd700; /*#333*/
-}
+    ul.topnav li a.active {
+      background-color: RGB(85,117,0); /*#313*/
+      color: orange;
+      font-style: italic;
+    }
 
-@media screen and (max-width: 600px){
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
-}
-  
-   .footer {
-     background-color: #2f4f4f;
-     color: #ffffff;
-     text-align: center;
-     font-size: 12px;
-     padding: 15px;
+
+   .menu ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
    }
+   .menu li {
+     padding: 8px;
+     margin-bottom: 7px;
+     background-color :#008b8b;
+     color: #ffffff;
+     box-shadow: 10px 10px 5px gray;
+     text-decoration: none;
+     border-radius: 12px;
+   }
+   .menu li:hover {
+     background-color: #2f4f4f;
+	   box-shadow: 4px 4px 5px gray;
+   }
+   .menu li:active {
+     background-color: #2f4f4f;
+	 box-shadow: 4px 4px 5px orange;
+     color: orange;	 
+   } 
+   .container {
+    display: flex;
+    flex-direction:row; 
+   }
+   .container1 {
+    display: flex;
+    flex-direction:row;
+   }
+p {
+  
+  text-align: center;
+  background-color: lightgray;
+  color: navy;
+  padding: 10px;
+  border: 1px solid navy;
+  font-weight: bold;
+}
+#JSkuva2{
+  border-radius: 20px;
+  padding: 10px;
+}
+
+   .footer {
+    background-color: RGB(20,47,14);
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
    .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #f56969; /* Green */
     border: none;
     color: white;
     padding: 16px 32px;
@@ -116,9 +136,10 @@ ul.topnav1 {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    border-radius: 12px;
   }
   button:hover {
-    background-color: red;
+    background-color: rgb(196, 238, 124);
   }
   .button1 {
     background-color: #4CAF50; /* Green */
@@ -128,6 +149,7 @@ ul.topnav1 {
     color: white; 
     font-size: 16px;
     margin: 4px 2px;
+    border-radius: 12px;
   }
   
   .button1:hover {

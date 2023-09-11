@@ -30,7 +30,7 @@
 
    <div class="row">
 
-    
+    <div class="col-3 col-s-3 menu">
       <ul class="topnav">
         <li><a class="active" href="index.html">Aluksi</a></li>
         <li><a href="sivu1.html">Muuttujat</a></li>
@@ -41,7 +41,7 @@
         <li><a href="sivu10.html">Lomakkeet</a></li>
         <li><a href="CSS_JS/CSS_JS_1.html">CSS ja JavaScript</a></li>
        </ul>
- 
+    </div>
 
     <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
@@ -60,12 +60,13 @@
         &LTp id="teksti"> Vaihdettava teksti &LT/p>
         &LTbutton type="button" onclick="omaVaihda()"> Klikkaa &LT/button>
       </pre></div>
-  <div>
-    <p id="teksti">Vaihdettava teksti 1</p>
+  <div class="container">
     <button type="button" class="button" onclick="omaVaihda()">Klikkaa 1</button>
-    <p id="teksti2">Vaihdettava teksti 2</p>
+    <p id="teksti">Vaihdettava teksti 1</p>
+  </div>
+  <div class="container">
     <button type="button" class="button1" onclick="omavaihda2()">klikkaa 2</button>
-
+    <p id="teksti2">Vaihdettava teksti 2</p>
   </div>
   
   <script>
@@ -74,33 +75,38 @@
     "<span id='vari'> Uusi teksti. <span/>";
     }
     function omavaihda2() {
-    document.getElementById("teksti2").innerHTML = "<span id='vari2'> Uusi teksti 2 <span/>";
+    document.getElementById("teksti2").innerHTML = "<span id='vari2'> New text <span/>";
     }
   </script>
   
 <!------------------- END ------------------------------------------->
-<h3> Tehtävä 1 </h3>
+<h3> Tehtävä 2 </h3>
+  <div class="container1">
+    <img id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton1()">
+    <p id="teksti1">Yläpuolen teksti</p>
+  </div> 
+  <div class="container1">
+    <img id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2()">
+    <p id="tekst2">Alapuolen teksti</p>
+   </div> 
   
- <p id="teksti1">Yläpuolen teksti</p>
- <img id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton1()">
-
- <p id="tekst2">Alapuolen teksti</p>
- <img id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2()">
+ 
 
 
  <script>
   function clickButton1() {
-  document.getElementById("teksti1").innerHTML = "I am a programmer";
+  document.getElementById("teksti1").innerHTML = "Hyvää päivää";
   }
   
   function clickButton2() {
-    document.getElementById("tekst2").innerHTML = "Olen myös ohjelmoija";
+    document.getElementById("tekst2").innerHTML = "Olen ohjelmoija";
   }
  </script>
 
-
 <!------------------------------------------------------------------->	
 
+    </div>
+  </div> 
 
    <div class="footer">
      <p> Eliyas Kassaye </p>

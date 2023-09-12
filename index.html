@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
   <style>
-   #vari{color:RED;}
-   #vari2{color: green;}
    #JSkuva1 {
             cursor: pointer;
             transition: transform 0.2s;
@@ -84,14 +82,14 @@
   <div id="koodi"><pre>
     <b>JS</b>
       &LTscript>
-      function clickButton1() {
-      document.getElementById("teksti1").innerHTML = "Hyvää päivää";
-      }
-      
-      function clickButton2() {
-        document.getElementById("tekst2").innerHTML = "Olen ohjelmoija";
-      }
-     </script>
+        function clickButton1() {
+        document.getElementById("teksti1").innerHTML = "Hyvää päivää";
+        }
+        
+        function clickButton2() {
+          document.getElementById("tekst2").innerHTML = "Olen ohjelmoija";
+        }
+        &LT/script>
     
     <b>HTML-koodaus</b>
     &LTdiv class="container1">
@@ -104,22 +102,34 @@
     /div> 
     </pre></div>
   <div class="container1">
-    <img id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton1()">
+    <img id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton('teksti1', 'Hyvää päivää', 'Yläpuolen teksti')">
     <p draggable="true" id="teksti1">Yläpuolen teksti</p>
   </div> 
   <div class="container1">
-    <img id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2()">
+    <img id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2('tekst2', 'Olen ohjelmoija', 'Alapuolen teksti')">
     <p draggable="true" id="tekst2">Alapuolen teksti</p>
    </div> 
   
  <script>
-  function clickButton1() {
-  document.getElementById("teksti1").innerHTML = "Hyvää päivää";
-  }
-  
-  function clickButton2() {
-    document.getElementById("tekst2").innerHTML = "Olen ohjelmoija";
-  }
+    function clickButton(elementId, newText1, newText2) {
+      let element = document.getElementById(elementId);
+        if (element.innerHTML === newText2) {
+          element.innerHTML = '<span style="color: red;">' + newText1 + '</span>';
+        } else {
+          element.innerHTML = newText2;
+        }
+      }
+    //document.getElementById("teksti1").innerHTML = "<span id='vari'>Hyvää päivää</span>";
+    
+    function clickButton2(elementId, newText1, newText2) {
+      let element = document.getElementById("tekst2");
+      if (element.innerHTML === newText2) {
+        element.innerHTML = '<span style="color: red;">' + newText1 + '</span>';
+      } else {
+        element.innerHTML = newText2;
+      }
+      //document.getElementById("tekst2").innerHTML = "<span id='vari2'>Olen ohjelmoija</span>";
+    }
  </script>
 
 <!------------------------------------------------------------------->	

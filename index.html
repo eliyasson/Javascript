@@ -62,11 +62,11 @@
       </pre></div>
   <div class="container">
     <button type="button" class="button" onclick="omaVaihda()">Klikkaa 1</button>
-    <p id="teksti">Vaihdettava teksti 1</p>
+    <p draggable="true" id="teksti">Vaihdettava teksti 1</p>
   </div>
   <div class="container">
     <button type="button" class="button1" onclick="omavaihda2()">klikkaa 2</button>
-    <p id="teksti2">Vaihdettava teksti 2</p>
+    <p draggable="true" id="teksti2">Vaihdettava teksti 2</p>
   </div>
   
   <script>
@@ -81,18 +81,37 @@
   
 <!------------------- END ------------------------------------------->
 <h3> Tehtävä 2 </h3>
+  <div id="koodi"><pre>
+    <b>JS</b>
+      &LTscript>
+      function clickButton1() {
+      document.getElementById("teksti1").innerHTML = "Hyvää päivää";
+      }
+      
+      function clickButton2() {
+        document.getElementById("tekst2").innerHTML = "Olen ohjelmoija";
+      }
+     </script>
+    
+    <b>HTML-koodaus</b>
+    &LTdiv class="container1">
+      &LTimg id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton1()">
+      &LTp id="teksti1">Yläpuolen teksti&LT/p>
+    /div> 
+      &LTdiv class="container1">
+      &LTimg id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2()">
+      &LTp id="tekst2">Alapuolen teksti&LT/p>
+    /div> 
+    </pre></div>
   <div class="container1">
     <img id="JSkuva1" src="kuva1.jpg" alt="kuva 1" type="button" onclick="clickButton1()">
-    <p id="teksti1">Yläpuolen teksti</p>
+    <p draggable="true" id="teksti1">Yläpuolen teksti</p>
   </div> 
   <div class="container1">
     <img id="JSkuva2" src="kuva2.jpg" alt="kuva 2" type="button" onclick="clickButton2()">
-    <p id="tekst2">Alapuolen teksti</p>
+    <p draggable="true" id="tekst2">Alapuolen teksti</p>
    </div> 
   
- 
-
-
  <script>
   function clickButton1() {
   document.getElementById("teksti1").innerHTML = "Hyvää päivää";

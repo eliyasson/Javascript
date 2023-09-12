@@ -103,7 +103,7 @@
     display: flex;
     flex-direction:row;
    }
-p {
+p[draggable] {
   
   text-align: center;
   background-color: lightgray;

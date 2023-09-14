@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
-<!--  <style>
- 
-  </style> -->
+  <style>  
+    span.border{
+      padding: 1px;
+      box-shadow: 3px 3px 5px #888888;
+      background-color: Azure;
+
+     
+      margin-top: 10px;
+    }
+  </style>
  </head>
  <body>
 
@@ -29,14 +36,34 @@
     </div>
     <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
-      <h3> Tehtävä 7 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
+      <h3 class="tehtava"> Tehtävä 1 </h3>
+      
+      <div id="koodi"><pre>
+        This text is the 
+          content of the box. We have 
+          added a 50px padding, 20px
+      </pre></div>
 
+      <h2>Rinnankytkennän laskenta</h2>
+      <p id="lasku"></p> 
+      <span class="border">Kolmen vastuksen rinnankytkennin laskeva scriptaus joka näyttää kytkennän vastusten arvot sekä yhteisvastuksen arvon.</span></p>
+      <script>
+        function laskeRinnankytkenta() {
+          var R1 = 100;
+          var R2 = 100;
+          var R3 = 100;
+
+          var Rkok = 1/((1/R1) + (1/R2) + (1/R3));
+
+          document.getElementById("lasku").innerHTML = 
+          "R1: " + R1 + "Ω<br>"
+          + "R2: " + R3 + "Ω<br>"
+          + "R3: " + R3 + "Ω<br>"
+          + "Rkok " + Rkok +  "Ω";
+        }
+      </script>
+
+    <button onclick="laskeRinnankytkenta()">Laske</button>
 <!------------------- END ------------------------------------------->
 
 <!------------------------------------------------------------------->	

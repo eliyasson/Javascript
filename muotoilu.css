@@ -1,6 +1,10 @@
    * {
      box-sizing: border-box;
+   }   
+   html {
+     font-family: "Lucida Sans", sans-serif;
    }
+   
    img {
      width: 100%;
      height: auto;
@@ -17,6 +21,14 @@
      padding: 15px;
      width: 100%;
    }
+   .header {
+    background-color: RGB(20,47,14);
+    color: #ffffff;
+    padding: 1px 5px 1px 15px;
+	  text-align: center;
+    width: 100%;
+    
+    }
    @media only screen and (min-width: 600px) {
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
@@ -45,30 +57,7 @@
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
     }
-   html {
-     font-family: "Lucida Sans", sans-serif;
-   }
-   .header {
-    background-color: RGB(20,47,14);
-    color: #ffffff;
-    padding: 1px 5px 1px 15px;
-	  text-align: center;
-	  border-bottom-style: 1px solid;
-	  border-bottom-color:  white;
-    }
-    
-    .laske-button {
-      background-color: #007bff; 
-      color: #fff; 
-      padding: 10px 20px; /* Padding inside the button */
-      border: none;
-      border-radius: 5px; /* Rounded corners */
-      cursor: pointer; 
-  }
-
-  button.laske-button:hover {
-      background-color: #0056b3; /* Darker background color on hover */
-  }
+ 
     ul.topnav li a {
         display: block;
         color: white;
@@ -78,7 +67,7 @@
     }
 
     ul.topnav li a.active {
-      background-color: RGB(85,117,0); /*#313*/
+      background-color: RGB(85,117,0);
       color: orange;
       font-style: italic;
     }
@@ -115,6 +104,31 @@
     display: flex;
     flex-direction:row;
    }
+
+   .laske-button{
+    width: 150px;
+    height: 50px;
+    font-size: 1.35rem;
+    cursor: pointer;
+    background-color:linear-gradient(to right, black 50%, white 0%); 
+    background-repeat: repeat;
+    background-size: 200%;
+    background-position: 100% 0;
+    box-shadow: 0.4rem 0.4rem 0 black;
+    transition: all 0.3s;
+    border: 3px solid black;
+    margin: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .button1:hover {
+    color: white;
+    border: none;
+    box-shadow: none;
+    background-position: 0 0;
+    transform: translate(0.4rem, 0.4rem);
+  }
 p[draggable] {
   
   text-align: center;
@@ -129,7 +143,7 @@ p[draggable] {
   padding: 10px;
 }
 
-   .footer {
+.footer {
     background-color: RGB(20,47,14);
     color: #ffffff;
     text-align: center;
@@ -137,36 +151,54 @@ p[draggable] {
     padding: 15px;
 }
    .button {
-    background-color: #f56969; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
+    width: 150px;
+    height: 50px;
+    font-size: 1.35rem;
     cursor: pointer;
-    border-radius: 12px;
+    background-color:linear-gradient(to right, black 50%, white 0%); 
+    background-repeat: repeat;
+    background-size: 200%;
+    background-position: 100% 0;
+    box-shadow: 0.4rem 0.4rem 0 black;
+    transition: all 0.3s;
+    border: 2px solid black;
+    margin: 20px;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    
   }
   button:hover {
-    background-color: rgb(196, 238, 124);
+    color: white;
+    background-color: black;
+    border: none;
+    box-shadow: none;
+    background-position: 0 0;
+    transform: translate(0.4rem, 0.4rem);
   }
   .button1 {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    padding: 16px 32px;
-    text-align: center;
-    color: white; 
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
+    width: 150px;
+    height: 50px;
+    font-size: 1.35rem;
+    cursor: pointer;
+    background-color:linear-gradient(to right, black 50%, white 0%); 
+    background-repeat: repeat;
+    background-size: 200%;
+    background-position: 100% 0;
+    box-shadow: 0.4rem 0.4rem 0 black;
+    transition: all 0.3s;
+    border: 2px solid black;
+    margin: 20px;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
   }
-  
+
   .button1:hover {
-    background-color: rgb(0, 183, 255);
     color: white;
+    background-color: black;
+    border: none;
+    box-shadow: none;
+    background-position: 0 0;
+    transform: translate(0.4rem, 0.4rem);
   }
    #eiviiva {text-decoration: none;}
    #koodi {

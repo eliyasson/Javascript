@@ -38,6 +38,7 @@
       content of the box. We have 
       added a 50px padding, 20px
     </pre></div>
+
    <p id="vastaus"></p>
    <p id="koe"></p>
    <script>
@@ -51,7 +52,7 @@
       Rtotal = 1 / (1/R1 + 1/R2 + 1/R3);
       return Rtotal;
     }
-    document.getElementById("koe").innerHTML = "The total result is: " + kolmeRinnan() + "Ω";
+    document.getElementById("koe").innerHTML = "The total result is: " + kolmeRinnan().toFixed(2) + "Ω";
     document.getElementById("vastaus").innerHTML = "R1: " + R1 + "Ω<br>" + "R2: " + R2 + "Ω<br>" + "R3: " + R3  + "Ω";
     
    </script>
@@ -60,13 +61,35 @@
 <!------------------- END ------------------------------------------->
 
 <!------------------------------------------------------------------->	
-      <h3> Tehtävä 8 </h3>
+      <h3> Tehtävä 2 </h3>
       <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
+      <div id="koodi"><pre>
+      This text is the 
+        content of the box. We have 
+        added a 50px padding, 20px
+      </pre></div>
+
+      <p>Syötä vastusten arvot:</p>
+      <input type="text" id="vastus1" placeholder="R1: ">
+      <input type="text" id="vastus2" placeholder="R2: ">
+      <input type="text" id="vastus3" placeholder="R3: ">
+      <button onclick="kolmeResistors()">Laske</button>
+      <p id="koy3"></p>
+      <p id="resistors"></p>
+
+      <script>
+        
+
+        function kolmeResistors() {
+          var R1 = parseFloat(document.getElementById("vastus1").value);
+          var R2 = parseFloat(document.getElementById("vastus2").value);
+          var R3 = parseFloat(document.getElementById("vastus3").value);  
+          
+          var rTotal = 1 / ((1 / R1) + (1 / R2) + (1 / R3));
+          document.getElementById("koy3").innerHTML = "Rinnankytkennän kokonaisvastus on " + rTotal.toFixed(2) + " ohmia.";
+          document.getElementById("resistors").innerHTML = "Käytetyt vastukset: " + vastus1 + " ohmia, " + vastus2 + " ohmia, " + vastus3 + " ohmia.";
+        }
+      </script>
 
 <!------------------- END ------------------------------------------->
 

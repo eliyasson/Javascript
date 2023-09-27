@@ -4,9 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
-<!--  <style>
+  <style>
+    #vastus1{
+      margin: 0 0 5px 5px;
+      padding: 4px;
+      border: 1px solid rgb(255, 0, 0);
+    }
+    #vastus2{
+      margin: 0 0 5px 5px;
+      padding: 4px;
+      border: 1px solid rgb(255, 0, 0);
+    }
+    #vastus3{
+      margin: 0 5px 5px;
+      padding: 4px;
+      border: 1px solid rgb(255, 0, 0);
+    }
+    #click{
+      cursor: pointer;
+      width: 100px;
+      height: 30px;
+      margin-left: 30px;
+      background-color: rgb(250, 159, 113);
+    }
+    #resistors{
+      margin-left: 5px;
+      font-weight: 500;
+    }
+    #koy3{
+      margin-left: 5px;
+      font-weight: 900;
+    }
  
-  </style> -->
+  </style> 
  </head>
  <body>
 
@@ -32,15 +62,36 @@
     <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 1 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-    <div id="koodi"><pre>
-    This text is the 
-      content of the box. We have 
-      added a 50px padding, 20px
-    </pre></div>
+      <h1>Rinnankytkennän laskenta</h1>
+      <div id="koodi"><pre>
+        <b>JS</b>
+          &LTscript>
+          var R1 = 10,
+              R2 = 20, 
+              R3 = 25,
+              Rtotal;
+          
+            
+            function kolmeRinnan() {
+            Rtotal = 1 / ((1/R1) + (1/R2) + (1/R3));
+            return Rtotal;
+          }
+          document.getElementById("koe").innerHTML = "The total result is: " + kolmeRinnan().toFixed(2) + "Ω";
+          document.getElementById("vastaus").innerHTML = "R1: " + R1 + "Ω" + "R2: " + R2 + "Ω" + "R3: " + R3  + "Ω";
+       </script>
+         
+        <b>HTML-koodaus</b>
+          &LTdiv>
+            &LTp id="vastaus">&LT/p>
+            &LTp id="koe">&LT/p>
+          &LT/div>
+        </pre></div>
+        <div>
+          <p id="vastaus"></p>
+          <p id="koe"></p>
+        </div>
 
-   <p id="vastaus"></p>
-   <p id="koe"></p>
+   
    <script>
     var R1 = 10,
         R2 = 20, 
@@ -49,13 +100,37 @@
     
       
       function kolmeRinnan() {
-      Rtotal = 1 / (1/R1 + 1/R2 + 1/R3);
+      Rtotal = 1 / ((1/R1) + (1/R2) + (1/R3));
       return Rtotal;
     }
     document.getElementById("koe").innerHTML = "The total result is: " + kolmeRinnan().toFixed(2) + "Ω";
     document.getElementById("vastaus").innerHTML = "R1: " + R1 + "Ω<br>" + "R2: " + R2 + "Ω<br>" + "R3: " + R3  + "Ω";
     
    </script>
+  
+
+   <div class="box">
+      <p>Syötä vastusten arvot:</p>
+      <input type="text" id="vastus1" placeholder="R1: "><br>
+      <input type="text" id="vastus2" placeholder="R2: "><br>
+      <input type="text" id="vastus3" placeholder="R3: "><br>
+      <button id="click" onclick="kolmeResistors()">Laske</button>
+      <p id="resistors"></p>
+      <p id="koy3"></p>
+      <script>
+      function kolmeResistors() {
+        var R1 = parseFloat(document.getElementById("vastus1").value);
+        var R2 = parseFloat(document.getElementById("vastus2").value);
+        var R3 = parseFloat(document.getElementById("vastus3").value);  
+        
+        var rTotal = 1 / ((1 / R1) + (1 / R2) + (1 / R3));
+        document.getElementById("koy3").innerHTML = "Tulos: " + rTotal.toFixed(2) + "Ω";
+        document.getElementById("resistors").innerHTML = "Käytetyt vastukset:<br>R1:  " + R1 + "Ω<br>" + "R2: " + R2 + "Ω<br>" + "R3: " + R3 + "Ω<br>";
+      }
+    </script>
+   </div>
+
+   
 
 
 <!------------------- END ------------------------------------------->
@@ -64,32 +139,60 @@
       <h3> Tehtävä 2 </h3>
       <p> Lyhyesti, mitä koodaus tekee. </p>
       <div id="koodi"><pre>
-      This text is the 
-        content of the box. We have 
-        added a 50px padding, 20px
-      </pre></div>
+        <b>JS</b>
+          &LTscript>
+          function areaLaske() {
+            var radius = parseInt(document.getElementById("sade").value);
+            var surfaceArea = 4 * Math.PI * (radius * radius);
+            document.getElementById("areaResult").innerHTML = "The Area of sphere is: " + surfaceArea.toFixed(2);
+          }
+          function volumeLaske() {
+            var radius = parseInt(document.getElementById("sade").value);
+            var volume = 4/3 * Math.PI * (radius * radius * radius);
+            document.getElementById("areaResult").innerHTML = "The volume of sphere is: " + volume.toFixed(2);
+          }
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+          &LTdiv>
+            &LTh1 style="color: #333; font-family: arial, sans-sarif;">Pallon laskenta&LT/h1>
+            &LTp>Syötä pallon säde:&LT/p>
+            &LTinput id="sade" type="text" placeholder="Anna pallon säde: ">
+            &LTbutton id="area" onclick="areaLaske()">Laske/&LTbutton>
+            &LTbutton id="volueme" onclick="volumeLaske()">Laske&LT/button>
+    
+            &LTp id="areaResult">&LT/p>
+            &LTp id="volumeResult">&LT/p>
+    
+          &LT/div>
+        </pre></div>
 
-      <p>Syötä vastusten arvot:</p>
-      <input type="text" id="vastus1" placeholder="R1: ">
-      <input type="text" id="vastus2" placeholder="R2: ">
-      <input type="text" id="vastus3" placeholder="R3: ">
-      <button onclick="kolmeResistors()">Laske</button>
-      <p id="koy3"></p>
-      <p id="resistors"></p>
+      <h1 style="color: #333; font-family: arial, sans-sarif;">Pallon laskenta</h1>
+      <div class="sphere">
+        <p>Syötä pallon säde:</p>
+        <input id="sade" type="text" placeholder="Anna pallon säde: ">
+        <button id="area" onclick="areaLaske()">Laske</button>
+        <button id="volueme" onclick="volumeLaske()">Laske</button>
 
-      <script>
-        
+        <p id="areaResult"></p>
+        <p id="volumeResult"></p>
 
-        function kolmeResistors() {
-          var R1 = parseFloat(document.getElementById("vastus1").value);
-          var R2 = parseFloat(document.getElementById("vastus2").value);
-          var R3 = parseFloat(document.getElementById("vastus3").value);  
-          
-          var rTotal = 1 / ((1 / R1) + (1 / R2) + (1 / R3));
-          document.getElementById("koy3").innerHTML = "Rinnankytkennän kokonaisvastus on " + rTotal.toFixed(2) + " ohmia.";
-          document.getElementById("resistors").innerHTML = "Käytetyt vastukset: " + vastus1 + " ohmia, " + vastus2 + " ohmia, " + vastus3 + " ohmia.";
-        }
-      </script>
+        <script>
+          function areaLaske() {
+            var radius = parseInt(document.getElementById("sade").value);
+            var surfaceArea = 4 * Math.PI * (radius * radius);
+            document.getElementById("areaResult").innerHTML = "Pallon pinta-ala on: " + surfaceArea.toFixed(2);
+          }
+          function volumeLaske() {
+            var radius = parseInt(document.getElementById("sade").value);
+            var volume = 4/3 * Math.PI * (radius * radius * radius);
+            document.getElementById("areaResult").innerHTML = "Pallon tilavuus on: " + volume.toFixed(2);
+          }
+        </script>
+
+      </div>
+      
+      
 
 <!------------------- END ------------------------------------------->
 

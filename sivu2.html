@@ -199,11 +199,41 @@
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 3 </h3>
       <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
+      <div id="koodi"><pre>
+      This text is the 
+        content of the box. We have 
+        added a 50px padding, 20px
+      </pre></div>
+
+      <div>
+        <h1>Rinnankytkennän laskenta</h1>
+        <table>
+          <tr>
+            <th>Vastus 1</th>
+            <th>Vastus 2</th>
+            <th>Vastus 3</th>
+            <th>Total Resistance</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="v1" placeholder="Vastus 1"></td>
+            <td><input type="text" id="v2" placeholder="Vastus 2"></td>
+            <td><input type="text" id="v3" placeholder="Vastus 3"></td>
+            <td id="total1"></td>
+          </tr>
+        </table>
+        <button onclick="calculateParallelResistance()">Laske</button>
+      </div>
+
+      <script>
+        function calculateParallelResistance() {
+          var vastus1 = parseFloat(document.getElementById("v1").value);
+          var vastus2 = parseFloat(document.getElementById("v2").value);
+          var vastus3 = parseFloat(document.getElementById("v3").value);
+          var total = 1 / ((1 / vastus1) + (1 / vastus2) + (1 / vastus3));
+
+          document.getElementById("total1").innerHTML = total.toFixed(2) + "Ω";
+        }
+      </script>
 
 <!------------------- END ------------------------------------------->
 

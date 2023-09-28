@@ -52,9 +52,10 @@
     }
 
     .input1[type="text"] {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
+      background: linear-gradient(to right, #faeae1, #d5d3a1);
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
     }
 
     .button3 {
@@ -307,12 +308,43 @@
 
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 4 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
+      <div id="koodi"><pre>
+        <b>JS</b>
+          &LTscript>
+            var koneMERKKI = "BOSCH PBH 2100 RE";
+            var hinta1 = 199.99;
+    
+            var toinenLaiteTyyppi = "Sähkökäyttöinen ruohonleikkuri";
+            var hinta2 = 299.99;
+    
+            var productList = document.getElementById("productList");
+            productList.innerHTML += "Tuote 1 - Poravasara: " + window.koneMERKKI + ", hinta: " + window.hinta1 + " €";
+            productList.innerHTML += "Tuote 2 - " + window.toinenLaiteTyyppi + ", hinta: " + window.hinta2 + " €";
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+          &LTdiv id="productList">
+            &LTp id="product1">&LT/p>
+            &LTp id="product2">&LT/p>
+          &LT/div>
+        </pre></div>
+
+      <div id="productList">
+        <p id="product1"></p>
+        <p id="product2"></p>
+      </div>
+
+    <script>
+        var koneMERKKI = "BOSCH PBH 2100 RE";
+        var hinta1 = 199.99;
+
+        var toinenLaiteTyyppi = "Sähkökäyttöinen ruohonleikkuri";
+        var hinta2 = 299.99;
+
+        var productList = document.getElementById("productList");
+        productList.innerHTML += "Tuote 1 - Poravasara: " + window.koneMERKKI + ", hinta: " + window.hinta1 + " €<br>";
+        productList.innerHTML += "Tuote 2 - " + window.toinenLaiteTyyppi + ", hinta: " + window.hinta2 + " €";
+    </script>
 
 <!------------------- END ------------------------------------------->
 

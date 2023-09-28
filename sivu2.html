@@ -35,27 +35,67 @@
       margin-left: 5px;
       font-weight: 900;
     }
+    table {
+    width: 100%;
+    margin-top: 20px;
+    
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: #fff;
+    }
+
+    .input1[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .button3 {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-left: 30%;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .button3:hover {
+        background-color: #0056b3;
+    }
+    #total1 {
+    font-weight: bold;
+    color: #fa0000;
+    margin-top: 15px;
+    }
  
   </style> 
  </head>
  <body>
 
    <div class="header">
-     <h1> JavaScript sivu1. html</h1>
+     <h1> JavaScript sivu2. html</h1>
    </div>
 
    <div class="row">
       <div class="col-3 col-s-3 menu">
         <ul class="topnav">
-        <li><a href="index.html">Aluksi</a></li>
-        <li><a href="sivu1.html">Muuttujat</a></li>
-        <li><a class="active" href="sivu2.html">Funktiot</a></li>
-        <li><a href="sivu3.html">Tapahtumat</a></li>
-        <li><a href="sivu4.html">Metodit</a></li>
-        <li><a href="sivu8.html">Ehto ja toisto</a></li>
-        <li><a href="sivu10.html">Lomakkeet</a></li>
-        <li><a href="CSS_JS/CSS_JS_1.html">CSS ja JavaScript</a></li>
-      </ul>
+          <li><a href="index.html">Aluksi</a></li>
+          <li><a href="sivu1.html">Muuttujat</a></li>
+          <li><a class="active" href="sivu2.html">Funktiot</a></li>
+          <li><a href="sivu3.html">Tapahtumat</a></li>
+          <li><a href="sivu4.html">Metodit</a></li>
+          <li><a href="sivu8.html">Ehto ja toisto</a></li>
+          <li><a href="sivu10.html">Lomakkeet</a></li>
+          <li><a href="CSS_JS/CSS_JS_1.html">CSS ja JavaScript</a></li>
+        </ul>
     </div>
     
 
@@ -85,7 +125,7 @@
             &LTp id="vastaus">&LT/p>
             &LTp id="koe">&LT/p>
           &LT/div>
-        </pre></div>
+      </pre></div>
         <div>
           <p id="vastaus"></p>
           <p id="koe"></p>
@@ -198,43 +238,71 @@
 
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 3 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
       <div id="koodi"><pre>
-      This text is the 
-        content of the box. We have 
-        added a 50px padding, 20px
-      </pre></div>
+        <b>JS</b>
+          &LTscript>
+          function calculateParallelResistance() {
+            var vastus1 = parseFloat(document.getElementById("v1").value);
+            var vastus2 = parseFloat(document.getElementById("v2").value);
+            var vastus3 = parseFloat(document.getElementById("v3").value);
+            var total = 1 / ((1 / vastus1) + (1 / vastus2) + (1 / vastus3));
 
-      <div>
-        <h1>Rinnankytkennän laskenta</h1>
+            document.getElementById("total1").innerHTML = total.toFixed(2) + "Ω";
+          }
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+          &LTdiv class="sphere2">
+            &LTh1 style="color: #333;">Rinnankytkennän laskenta</h1>
+            &LTtable>
+              &LTtr>
+                &LTth>Vastus 1&LT/th>
+                &LTth>Vastus 2&LT/th>
+                &LTth>Vastus 3&LT/th>
+                &LTth id="average">Total Resistance&LT/th>
+              &LT/tr>
+              &LTtr>
+                &LTtd>&LTinput class="input1" type="text" id="v1" placeholder="R1(Ω): ">&LT/td>
+                &LTtd>&LTinput class="input1" type="text" id="v2" placeholder="R2(Ω): ">&LT/td>
+                &LTtd>&LTinput class="input1" type="text" id="v3" placeholder="R3(Ω): ">&LT/td>
+                &LTtd id="total1">&LT/td>
+                &LT/tr>
+            &LT/table>
+            &LTbutton class="button3" onclick="calculateParallelResistance()">Laske&LT/button>
+        
+          &LT/div>
+        </pre></div>
+
+      <div class="sphere2">
+        <h2 style="color: #333;">Rinnankytkennän laskenta</h2>
         <table>
           <tr>
             <th>Vastus 1</th>
             <th>Vastus 2</th>
             <th>Vastus 3</th>
-            <th>Total Resistance</th>
+            <th id="average">Total Resistance</th>
           </tr>
           <tr>
-            <td><input type="text" id="v1" placeholder="Vastus 1"></td>
-            <td><input type="text" id="v2" placeholder="Vastus 2"></td>
-            <td><input type="text" id="v3" placeholder="Vastus 3"></td>
+            <td><input class="input1" type="text" id="v1" placeholder="R1(Ω): "></td>
+            <td><input class="input1" type="text" id="v2" placeholder="R2(Ω): "></td>
+            <td><input class="input1" type="text" id="v3" placeholder="R3(Ω): "></td>
             <td id="total1"></td>
           </tr>
         </table>
-        <button onclick="calculateParallelResistance()">Laske</button>
+        <button class="button3" onclick="calculateParallelResistance()">Laske</button>
+      
       </div>
+        <script>
+          function calculateParallelResistance() {
+            var vastus1 = parseFloat(document.getElementById("v1").value);
+            var vastus2 = parseFloat(document.getElementById("v2").value);
+            var vastus3 = parseFloat(document.getElementById("v3").value);
+            var total = 1 / ((1 / vastus1) + (1 / vastus2) + (1 / vastus3));
 
-      <script>
-        function calculateParallelResistance() {
-          var vastus1 = parseFloat(document.getElementById("v1").value);
-          var vastus2 = parseFloat(document.getElementById("v2").value);
-          var vastus3 = parseFloat(document.getElementById("v3").value);
-          var total = 1 / ((1 / vastus1) + (1 / vastus2) + (1 / vastus3));
-
-          document.getElementById("total1").innerHTML = total.toFixed(2) + "Ω";
-        }
-      </script>
-
+            document.getElementById("total1").innerHTML = total.toFixed(2) + "Ω";
+          }
+        </script>
+   
 <!------------------- END ------------------------------------------->
 
 <!------------------------------------------------------------------->	

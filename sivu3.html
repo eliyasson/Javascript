@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
   <style>
-    #box {
+    #box, #box1 {
       display:flex;
       align-items: center;
       font-weight: bold;
@@ -16,6 +16,7 @@
       font-size: 16px;
       background-color: #f2ed6992;
     }
+  
   </style> 
  </head>
  <body>
@@ -40,15 +41,32 @@
   <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 1 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
       <div id="koodi"><pre>
-      This text is the 
-        content of the box. We have 
-        added a 50px padding, 20px
-      </pre></div>
-      <div id="box">Klikkaa hiiren painikkeilla</div>
+        <b>JS</b>
+          &LTscript>
+            const box = document.getElementById('box');
+    
+            box.addEventListener('mousedown', function(event) {
+                if (event.which === 1) {
+                    box.innerText = 'Vasen painike';
+                    box.style.backgroundColor = 'lightblue';
+                } else if (event.which === 2) {
+                    box.innerText = 'Keskimmäinen painike';
+                    box.style.backgroundColor = 'lightgreen';
+                } else if (event.which === 3) {
+                    box.innerText = 'Oikea painike';
+                    box.style.backgroundColor = 'lightcoral';
+                }
+            });
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+          const box = document.getElementById('box');
+            
+        </pre></div>
 
-    <script>
+      <div id="box">Klikkaa hiiren painikkeilla</div>
+      <script>
         const box = document.getElementById('box');
 
         box.addEventListener('mousedown', function(event) {
@@ -63,18 +81,92 @@
                 box.style.backgroundColor = 'lightcoral';
             }
         });
-    </script>
+      </script>
 
 <!------------------- END ------------------------------------------->
 
-<!------------------------------------------------------------------->	
+<!------------------------------------------------------------------->
       <h3> Tehtävä 2 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
       <div id="koodi"><pre>
-      This text is the 
-        content of the box. We have 
-        added a 50px padding, 20px
-      </pre></div>
+        <b>JS</b>
+          &LTscript>
+            const box1 = document.getElementById('box1');
+    
+            box1.addEventListener('mousedown', function(event) {
+                if (event.which === 1) {
+                    if (event.altKey) { 
+                        const parallelConnectionResult = laskeRinnankytkentaTulos();
+                        näytäTulos(parallelConnectionResult);
+                    } else {
+                        const seriesConnectionResult = laskeSarjakytkentaTulos();
+                        näytäTulos(seriesConnectionResult);
+                    }
+                }
+            });
+    
+            function laskeSarjakytkentaTulos() {
+                const R1 = 10;
+                const R2 = 20;
+                const R3 = 30;
+                const tulos = R1 + R2 + R3;
+                return tulos;
+            }
+    
+            function laskeRinnankytkentaTulos() {
+                const R1 = 10;
+                const R2 = 20;
+                const R3 = 30;
+                const tulos = 1 / ((1 / R1) + (1 / R2) + (1 / R3));
+                return tulos;
+            }
+    
+            function näytäTulos(tulos) {
+                box1.innerText = "Tulos: " + tulos.toFixed(2) + " Ω";
+            }
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+          &LTdiv id="box1">Tulos näkyy täällä &LT/div>
+            
+        </pre></div>
+
+      <div id="box1">Tulos näkyy täällä</div>
+
+    <script>
+        const box1 = document.getElementById('box1');
+
+        box1.addEventListener('mousedown', function(event) {
+            if (event.which === 1) {
+                if (event.altKey) { 
+                    const parallelConnectionResult = laskeRinnankytkentaTulos();
+                    näytäTulos(parallelConnectionResult);
+                } else {
+                    const seriesConnectionResult = laskeSarjakytkentaTulos();
+                    näytäTulos(seriesConnectionResult);
+                }
+            }
+        });
+
+        function laskeSarjakytkentaTulos() {
+            const R1 = 10;
+            const R2 = 20;
+            const R3 = 30;
+            const tulos = R1 + R2 + R3;
+            return tulos;
+        }
+
+        function laskeRinnankytkentaTulos() {
+            const R1 = 10;
+            const R2 = 20;
+            const R3 = 30;
+            const tulos = 1 / ((1 / R1) + (1 / R2) + (1 / R3));
+            return tulos;
+        }
+
+        function näytäTulos(tulos) {
+            box1.innerText = "Tulos: " + tulos.toFixed(2) + " Ω";
+        }
+    </script>
 
 <!------------------- END ------------------------------------------->
 

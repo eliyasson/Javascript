@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
-<!--  <style>
+  <style>
+    .dice-container {
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        width: 100%;
+        align-items: center;
+        
+    }
+
+    .dice-kuva {
+        width: 30%;
+        margin-right: 50px;
+        text-align: center;
+        background: linear-gradient(to bottom, #44f026, #f4f437, rgb(253, 64, 64));
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #dice {
+        width: 150px;
+        height: 150px;
+        border-radius: 45px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #dice-button1 {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: rgb(249, 224, 224);
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #dice-button1:hover {
+        background-color: #45a049;
+    }
+</style>
  
-  </style> -->
  </head>
  <body>
 
@@ -30,12 +68,83 @@
     <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
       <h3> Tehtävä 1 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
+      <div id="koodi"><pre>
+        <b>JS</b>
+          &LTscript>
+          const diceImages = [
+              "kuva/dice1.png", 
+              "kuva/dice2.png", 
+              "kuva/dice3.png",
+              "kuva/dice4.png", 
+              "kuva/dice5.png", 
+              "kuva/dice6.png"  
+          ];
+  
+          function rollDice() {
+              const dice = Math.floor(Math.random() * 6) + 1;
+              displayDice(dice);
+          }
+  
+          function displayDice(number) {
+              const diceElement = document.getElementById('dice');
+              const diceTextElement = document.getElementById('diceText');
+  
+              const imageFile = diceImages[number - 1];
+              const text = `Arpa ${number}`;
+  
+              diceElement.src = imageFile;
+              diceTextElement.innerText = text;
+          }
+      </script>
+         
+        <b>HTML-koodaus</b>
+        &LTdiv class="dice-container">
+          &LTdiv class="dice-kuva">
+            &LTbutton id="dice-button1" onclick="rollDice()">Heitä noppa&LT/button>
+          &LT/div>
+          &LTdiv class="diceContainer">
+            &LTp id="diceText">Roll the dice&LT/p>
+            &LTimg id="dice" src="kuva/dice.png" alt="Dice">     
+          &LT/div>
+        &LT/div>
+            
+        </pre></div>
+      <div class="dice-container">
+        <div class="dice-kuva">
+          <button id="dice-button1" onclick="rollDice()">Heitä noppa</button>
+        </div>
+        <div class="diceContainer">
+          <p id="diceText">Roll the dice</p>
+          <img id="dice" src="kuva/dice.png" alt="Dice">     
+        </div>
+      </div>
+  
+    <script>
+        const diceImages = [
+            "kuva/dice1.png", 
+            "kuva/dice2.png", 
+            "kuva/dice3.png",
+            "kuva/dice4.png", 
+            "kuva/dice5.png", 
+            "kuva/dice6.png"  
+        ];
+
+        function rollDice() {
+            const dice = Math.floor(Math.random() * 6) + 1; // Roll a number between 1 and 6
+            displayDice(dice);
+        }
+
+        function displayDice(number) {
+            const diceElement = document.getElementById('dice');
+            const diceTextElement = document.getElementById('diceText');
+
+            const imageFile = diceImages[number - 1]; // Adjust for 0-based index
+            const text = `Arpa ${number}`;
+
+            diceElement.src = imageFile;
+            diceTextElement.innerText = text;
+        }
+    </script>
 
 <!------------------- END ------------------------------------------->
 

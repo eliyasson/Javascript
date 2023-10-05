@@ -46,8 +46,8 @@
     }
 
     .footer1 {
-      
-      background-color: rgba(7, 64, 64, 0.459);
+      color: rgb(255, 255, 255);
+      background-color: rgba(113, 113, 113, 0.717);
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color: #ffffff;
       text-align: center;
@@ -56,12 +56,19 @@
       padding: 15px;
     }
     #tervehdys {
+      color: rgb(255, 255, 255);
+      background-color: rgba(113, 113, 113, 0.717);
       font-size: 24px;
       margin: 20px;
+      color: white;
+      width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px double lightgray;
     }
     #koodi1 {
-      color: rgba(253, 251, 251, 0.436);
-      background-color: rgba(113, 113, 113, 0.176);
+      color: rgb(255, 255, 255);
+      background-color: rgba(113, 113, 113, 0.441);
       border-radius: 5px;
       max-width: 90%;
       border: 1px solid #ccc;
@@ -138,23 +145,23 @@
           const bodyElement = document.body;
           const tervehdysElementti = document.getElementById('tervehdys');
 
-          function setGreetingAndBackground() {
-              if (tunti >= 5 && tunti < 10) {
+        function setGreetingAndBackground() {
+          if (tunti >= 5 && tunti < 10) {
             tervehdysElementti.innerText = "Hyvää huomenta";
             bodyElement.style.backgroundImage = "url('kuva/morning.jpg')";
-              } else if (tunti >= 10 && tunti < 14) {
+          } else if (tunti >= 10 && tunti < 14) {
             tervehdysElementti.innerText = "Hyvää päivää";
             bodyElement.style.backgroundImage = "url('kuva/day.jpg')";
-              } else if (tunti >= 14 && tunti < 17) {
+          } else if (tunti >= 14 && tunti < 17) {
             tervehdysElementti.innerText = "Hyvää iltapäivää";
             bodyElement.style.backgroundImage = "url('kuva/evening.jpg')";
-              } else if (tunti >= 17 && tunti < 23) {
+          } else if (tunti >= 17 && tunti < 23) {
             tervehdysElementti.innerText = "Hyvää iltaa";
             bodyElement.style.backgroundImage = "url('kuva/night.jpg')";
-              } else {
+          } else {
             tervehdysElementti.innerText = "Hyvää yötä";
             bodyElement.style.backgroundImage = "url('kuva/yota.jpg')";
-              }
+            }
           }
 
           setGreetingAndBackground();

@@ -15,7 +15,8 @@
     }
 
     .dice-kuva {
-        width: 30%;
+        max-width: 30%;
+        min-width: 150px;
         margin-right: 50px;
         text-align: center;
         background: linear-gradient(to bottom, #44f026, #f4f437, rgb(253, 64, 64));
@@ -33,7 +34,7 @@
     #dice-button1 {
         padding: 10px 20px;
         font-size: 18px;
-        background-color: rgb(249, 224, 224);
+        background-color: rgba(243, 109, 109, 0.874);
         color: black;
         border: none;
         border-radius: 5px;
@@ -71,31 +72,25 @@
       <div id="koodi"><pre>
         <b>JS</b>
           &LTscript>
-          const diceImages = [
-              "kuva/dice1.png", 
-              "kuva/dice2.png", 
-              "kuva/dice3.png",
-              "kuva/dice4.png", 
-              "kuva/dice5.png", 
-              "kuva/dice6.png"  
-          ];
-  
-          function rollDice() {
-              const dice = Math.floor(Math.random() * 6) + 1;
-              displayDice(dice);
-          }
-  
-          function displayDice(number) {
-              const diceElement = document.getElementById('dice');
-              const diceTextElement = document.getElementById('diceText');
-  
-              const imageFile = diceImages[number - 1];
-              const text = `Arpa ${number}`;
-  
-              diceElement.src = imageFile;
-              diceTextElement.innerText = text;
-          }
-      </script>
+            function rollDice() {
+                const dice = Math.floor(Math.random() * 6) + 1;
+                document.getElementById('diceText').innerHTML = "Arpa " + dice;
+    
+                if (dice === 1) {
+                  document.getElementById("dice").src = "kuva/dice1.png"
+                } else if (dice ===2) {
+                  document.getElementById("dice").src = "kuva/dice2.png"
+                } else if (dice ===3) {
+                  document.getElementById("dice").src = "kuva/dice3.png"
+                } else if (dice ===4) {
+                  document.getElementById("dice").src = "kuva/dice4.png"
+                } else if (dice ===5) {
+                  document.getElementById("dice").src = "kuva/dice5.png"
+                } else {
+                  document.getElementById("dice").src = "kuva/dice6.png"
+                }
+            }
+          &LT/script>
          
         <b>HTML-koodaus</b>
         &LTdiv class="dice-container">
@@ -115,26 +110,33 @@
         </div>
         <div class="diceContainer">
           <p id="diceText">Roll the dice</p>
-          <img id="dice" src="kuva/dice.png" alt="Dice">     
+          <img id="dice" type="button" onclick="rollDice()" src="kuva/dice.png" alt="Dice">     
         </div>
       </div>
   
     <script>
-        const diceImages = [
-            "kuva/dice1.png", 
-            "kuva/dice2.png", 
-            "kuva/dice3.png",
-            "kuva/dice4.png", 
-            "kuva/dice5.png", 
-            "kuva/dice6.png"  
-        ];
-
         function rollDice() {
             const dice = Math.floor(Math.random() * 6) + 1; // Roll a number between 1 and 6
-            displayDice(dice);
+            document.getElementById('diceText').innerHTML = "Arpa " + dice;
+
+
+            if (dice === 1) {
+              document.getElementById("dice").src = "kuva/dice1.png"
+            } else if (dice ===2) {
+              document.getElementById("dice").src = "kuva/dice2.png"
+            } else if (dice ===3) {
+              document.getElementById("dice").src = "kuva/dice3.png"
+            } else if (dice ===4) {
+              document.getElementById("dice").src = "kuva/dice4.png"
+            } else if (dice ===5) {
+              document.getElementById("dice").src = "kuva/dice5.png"
+            } else {
+              document.getElementById("dice").src = "kuva/dice6.png"
+            }
+           
         }
 
-        function displayDice(number) {
+        /*function displayDice(number) {
             const diceElement = document.getElementById('dice');
             const diceTextElement = document.getElementById('diceText');
 
@@ -143,65 +145,11 @@
 
             diceElement.src = imageFile;
             diceTextElement.innerText = text;
-        }
+        } */
     </script>
 
 <!------------------- END ------------------------------------------->
 
-<!------------------------------------------------------------------->	
-      <h3> Tehtävä 2 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
-
-<!------------------- END ------------------------------------------->
-
-<!------------------------------------------------------------------->	
-      <h3> Tehtävä 9 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
-
-<!------------------- END ------------------------------------------->
-
-<!------------------------------------------------------------------->	
-      <h3> Tehtävä 10 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
-
-<!------------------- END ------------------------------------------->
-
-<!------------------------------------------------------------------->	
-      <h3> Tehtävä 11 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
-
-<!------------------- END ------------------------------------------->
-
-<!------------------------------------------------------------------->	
-      <h3> Tehtävä 12 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
-<div id="koodi"><pre>
- This text is the 
-	content of the box. We have 
-  added a 50px padding, 20px
-</pre></div>
-
-<!------------------- END ------------------------------------------->
 
 
 

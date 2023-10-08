@@ -203,10 +203,6 @@ p[draggable] {
   border: 1px solid navy;
   font-weight: bold;
 }
-#JSkuva2 {
-  border-radius: 20px;
-  padding: 10px;
-}
 
 .footer {
   background: linear-gradient(to bottom, #fdb185, #827d29);

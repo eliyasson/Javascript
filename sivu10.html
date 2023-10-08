@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="muotoilu.css">
-<!--  <style>
- 
-  </style> -->
+  <style>
+    .message-box {
+      display: none;
+      background-color: lightgray;
+      border: 1px solid gray;
+      padding: 10px;
+      margin: 10px;
+    }
+    #notification {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+    width: 250px;
+   
+  
+  }
+  </style> 
  </head>
  <body>
 
@@ -29,14 +47,88 @@
     </div>
     <div class="col-9 col-s-9">
 <!------------------------------------------------------------------->	
-      <h3> Tehtävä 1 </h3>
-      <p> Lyhyesti, mitä koodaus tekee. </p>
       <div id="koodi"><pre>
-      This text is the 
-        content of the box. We have 
-        added a 50px padding, 20px
+        <b>JS</b>
+          &LTscript>
+            var form = document.getElementById('myForm');
+            var emailInput = document.getElementById('email');
+            var messageBox = document.getElementById('messageBox');
+            var notification = document.getElementById("notification");
+    
+            form.addEventListener('submit', function (e) {
+              if (emailInput.value.trim() === '') {
+                e.preventDefault(); // Prevent form submission
+                messageBox.style.display = 'block'; // Display the message box
+                setTimeout(function() {
+                  messageBox.style.display = 'none';
+                }, 3000); 
+                return false;
+              } else {
+                e.preventDefault();
+                notification.style.display = 'block';
+                setTimeout(function() {
+                  notification.style.display = 'none';
+                  emailInput.value = '';
+                }, 3000); 
+                return false;
+              } 
+            });
+          &LT/script>
+         
+        <b>HTML-koodaus</b>
+        &LTh1>Submit a Form&LT/h1>
+        &LTform id="myForm">
+          Email: &LTinput type="text" name="email" id="email">
+          &LTinput type="submit" value="Submit">
+        &LT/form>
+          &LTdiv class="message-box" id="messageBox">Oma email puuttuu. Ole hyvä, anna email..&LT/div>
+          &LTdiv id="notification" style="display: none;">
+            Message has been sent successfully!
+          &LT/div>
+
         <a href="http://tietokanta.dy.fi/ohjelmointi/opiJS/sivu10.html" target="_blank">Lue tehtävä klikkaamalla linkkiä...</a>
       </pre></div>
+      <h1>Submit a Form</h1>
+      <div class="sphere">
+        <form id="myForm">
+        Email: <input type="text" name="email" id="email">
+        <input type="submit" value="Submit">
+        </form>
+        <div class="message-box" id="messageBox">Oma email puuttuu. Ole hyvä, anna email..</div>
+
+        <div id="notification" style="display: none;">
+          Message has been sent successfully!
+        </div>
+      </div>
+      
+
+      <script>
+        var form = document.getElementById('myForm');
+        var emailInput = document.getElementById('email');
+        var messageBox = document.getElementById('messageBox');
+        var notification = document.getElementById("notification");
+
+        form.addEventListener('submit', function (e) {
+          if (emailInput.value.trim() === '') {
+            e.preventDefault(); // Prevent form submission
+            messageBox.style.display = 'block'; // Display the message box
+            setTimeout(function() {
+              messageBox.style.display = 'none';
+            }, 3000); 
+            return false;
+            
+          } else {
+            e.preventDefault();
+            notification.style.display = 'block';
+            setTimeout(function() {
+              notification.style.display = 'none';
+              emailInput.value = '';
+            }, 3000); 
+            return false;
+          }  
+         
+        });
+      </script>
 
 <!------------------- END ------------------------------------------->
 

@@ -261,7 +261,6 @@ p[draggable] {
   background-color: RGB(20, 47, 14);
   border: 1px solid #ccc;
   padding: 20px;
-  
   min-width: 320px;
   width: 310px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
